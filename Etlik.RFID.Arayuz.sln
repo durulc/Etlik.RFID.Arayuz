@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1778
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Etlik.RFID.Arayuz", "Etlik.RFID.Arayuz\Etlik.RFID.Arayuz.csproj", "{F42CF545-1E51-4252-AC72-88B952A3387B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Etlik.RFID.Entity", "Etlik.RFID.Entity\Etlik.RFID.Entity.csproj", "{5C8B930A-021F-44A0-B29B-B3C343C9FFC9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp1", "WindowsFormsApp1\WindowsFormsApp1.csproj", "{F53DC3C8-2C74-402E-BFC8-EC7EE0E2E6A4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F42CF545-1E51-4252-AC72-88B952A3387B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F42CF545-1E51-4252-AC72-88B952A3387B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F42CF545-1E51-4252-AC72-88B952A3387B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F42CF545-1E51-4252-AC72-88B952A3387B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C8B930A-021F-44A0-B29B-B3C343C9FFC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C8B930A-021F-44A0-B29B-B3C343C9FFC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C8B930A-021F-44A0-B29B-B3C343C9FFC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C8B930A-021F-44A0-B29B-B3C343C9FFC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F53DC3C8-2C74-402E-BFC8-EC7EE0E2E6A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F53DC3C8-2C74-402E-BFC8-EC7EE0E2E6A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F53DC3C8-2C74-402E-BFC8-EC7EE0E2E6A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F53DC3C8-2C74-402E-BFC8-EC7EE0E2E6A4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {230A3A7A-431E-4AEE-B277-3031E3753DA7}
+	EndGlobalSection
+EndGlobal
