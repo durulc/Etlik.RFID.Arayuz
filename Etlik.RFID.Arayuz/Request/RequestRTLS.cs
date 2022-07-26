@@ -7,5 +7,6 @@ namespace Etlik.RFID.Arayuz.Request
 {
     public class RequestRTLS
     {
+
     }
 }

@@ -43,7 +43,7 @@ namespace Etlik.RFID.Entity.Important
 
         public Session GetNewSession()
         {
-
+            SimpleDataLayer.SuppressReentrancyAndThreadSafetyCheck = true;
 
             string Server = ConfigurationSettings.AppSettings["BaglantiSunucuIp"].ToString().Trim();
             string UserID = ConfigurationSettings.AppSettings["BaglantiKullaniciAdi"].ToString().Trim();
@@ -52,6 +52,9 @@ namespace Etlik.RFID.Entity.Important
             string Port = ConfigurationSettings.AppSettings["BaglantiPort"].ToString().Trim();
 
             _connectionString = PostgreSqlConnectionProvider.GetConnectionString(Server, int.Parse(Port), UserID, password, Database);
+
+           
+
 
             using (IDataLayer dal = XpoDefault.GetDataLayer(_connectionString, AutoCreateOption.DatabaseAndSchema))
             {
