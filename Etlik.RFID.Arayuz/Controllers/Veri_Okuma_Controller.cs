@@ -11,5 +11,12 @@ namespace Etlik.RFID.Arayuz.Controllers
         {
              new Veri_Okuma_Manager().fn_RTLS(v_gelen);
         }
+
+        [HttpPost, HttpGet]
+        [Route("api/VeriTabaniOlustur")]
+        public void VeriTabaniOlustur()
+        {
+            new Veri_Okuma_Manager().fn_VeriTabaniOlustur();
+        }
     }
 }

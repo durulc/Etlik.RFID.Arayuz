@@ -26,7 +26,7 @@ namespace Etlik.RFID.Arayuz.Manager
 
                 //System.IO.File.WriteAllText(fullPath, v_gelen.ToString());
 
-                XpoManager.Instance.InitXpo();
+              
                 using (Session session = XpoManager.Instance.GetNewSession())
                 {
                     //new etlikveri(session)
@@ -73,6 +73,17 @@ namespace Etlik.RFID.Arayuz.Manager
 
                 System.IO.File.WriteAllText(fullPath, ex.ToString());
             }
+        }
+
+        internal void fn_VeriTabaniOlustur()
+        {
+            try
+            {
+                XpoManager.Instance.InitXpo();
+
+            }
+            catch (Exception ex)
+            { }
         }
     }
 }

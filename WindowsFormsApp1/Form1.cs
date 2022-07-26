@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Etlik.RFID.Entity.Important;
+using Newtonsoft.Json;
 using System;
 using System.Windows.Forms;
 
@@ -142,6 +143,18 @@ namespace WindowsFormsApp1
             jSonVeri _Details = JsonConvert.DeserializeObject<jSonVeri>(_Yazi);
 
             int sayi = 1;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                XpoManager.Instance.InitXpo();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }
