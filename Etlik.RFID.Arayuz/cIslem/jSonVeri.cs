@@ -13,7 +13,7 @@ namespace Etlik.RFID.Arayuz.cIslem
 
     public class v_meta
     {
-        public string version { get; set; }
+        public int version { get; set; }
     }
 
     public class v_reporter

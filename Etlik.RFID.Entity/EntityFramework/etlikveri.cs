@@ -32,7 +32,7 @@ namespace Etlik.RFID.Entity.EntityFramework
         public string reportermac
         {
             get { return _reportermac; }
-            set { SetPropertyValue<string>("matnr", ref _reportermac, value); }
+            set { SetPropertyValue<string>("reportermac", ref _reportermac, value); }
         }
 
         string _reportedmac = "";

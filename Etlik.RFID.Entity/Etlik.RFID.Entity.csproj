@@ -47,6 +47,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EntityFramework\anatablo.cs" />
+    <Compile Include="EntityFramework\beacons.cs" />
+    <Compile Include="EntityFramework\deviceClass.cs" />
     <Compile Include="EntityFramework\etlikveri.cs" />
     <Compile Include="EntityFramework\meta.cs" />
     <Compile Include="EntityFramework\okumaverisi.cs" />
