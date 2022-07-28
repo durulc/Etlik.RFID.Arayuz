@@ -12,7 +12,7 @@ namespace Etlik.RFID.Arayuz.Manager
         internal void fn_RTLS(object v_gelen)
         {
             #region Değişkenler
-            bool deviceuygunlugu = false;
+            
 
             #endregion
 
@@ -31,6 +31,7 @@ namespace Etlik.RFID.Arayuz.Manager
 
                 using (Session session = XpoManager.Instance.GetNewSession())
                 {
+                    
                     //new etlikveri(session)
                     //{
                     //    id = Guid.NewGuid().ToString().ToUpper()
@@ -47,7 +48,7 @@ namespace Etlik.RFID.Arayuz.Manager
                         id = Guid.NewGuid().ToString().ToUpper()
                     };
                     _anatablo.Save();
-
+                    
                     for (int i = 0; i < _Details.reported.Count; i++)
                     {
                         if (_Details.reported[i].mac.ToUpper().StartsWith("7C:69"))
@@ -66,37 +67,36 @@ namespace Etlik.RFID.Arayuz.Manager
                     #region 27.07.2022 Tüm Verinin İşlenmesi Başlangıç
                     //--------------------------------------------------27.07.2022 Tüm Verinin İşlenmesi Başlangıç--------------------------------------------------//
 
-
-
-                   
-
+                    //bool deviceuygunlugu = false;
+                    
                     for (int i = 0; i < _Details.reported.Count; i++)
                     {
-                        
+
                         if (_Details.reported[i].mac.ToUpper().StartsWith("7C:69"))
                         {
-                            deviceuygunlugu = true;
+                            //    //deviceuygunlugu = true;
                             reported _reportedTable = new reported(session)
                             {
 
                                 id = Guid.NewGuid().ToString().ToUpper(),
 
                                 model = _Details.reported[i].model,
-                                vendorName = _Details.reported[i].vendorName,
+                                vendorname = _Details.reported[i].vendorName,
                                 mac = _Details.reported[i].mac,
 
                                 stats_frame_cnt = _Details.reported[i].stats.frame_cnt,
                                 stats_uptime = _Details.reported[i].stats.uptime,
 
+                                //_sayac = "105";
                                 rssi_smooth = _Details.reported[i].rssi.smooth,
 
-                                beaconevent_event = _Details.reported[i].BeaconEvent.@event,
+                                //    beaconevent_event = _Details.reported[i].BeaconEvent.@event,
 
-                                firmware_banka = _Details.reported[i].firmware.bankA,
-                                firmware_bankb = _Details.reported[i].firmware.bankB,
+                                //firmware_banka = _Details.reported[i].firmware.bankA,
+                                //firmware_bankb = _Details.reported[i].firmware.bankB,
 
-                                txpower = _Details.reported[i].txpower,
-                                lastSeen = _Details.reported[i].lastSeen,
+                                //    txpower = _Details.reported[i].txpower,
+                                //    lastSeen = _Details.reported[i].lastSeen,
 
                             };
                             _reportedTable.Save();
@@ -112,8 +112,6 @@ namespace Etlik.RFID.Arayuz.Manager
                                     ibeacon_major = _Details.reported[i].beacons[j].ibeacon.major,
                                     ibeacon_minor = _Details.reported[i].beacons[j].ibeacon.minor,
                                     ibeacon_power = _Details.reported[i].beacons[j].ibeacon.power
-
-
                                 }.Save();
                             }
 
@@ -123,44 +121,50 @@ namespace Etlik.RFID.Arayuz.Manager
                                 {
                                     id = Guid.NewGuid().ToString().ToUpper(),
                                     reportedid = _reportedTable.id,
-                                    devicename = _Details.reported[i].deviceClass[k]
+                                    devicename = _Details.reported[i].deviceClass[k].ToString()
                                 }.Save();
                             }
+                            //string directory = System.IO.Path.Combine(@"C:\veriler\");
 
+                            //string fileName = "hata_" + Guid.NewGuid().ToString() + ".txt";
+
+                            //string fullPath = System.IO.Path.Combine(directory, fileName);
+
+                            //System.IO.File.WriteAllText(fullPath, v_gelen.ToString());
                         }
                     }
 
-                    if (deviceuygunlugu)
-                    {
-                        #region Reporter
-                        reporter _reporterTable = new reporter(session)
-                        {
-                            id = Guid.NewGuid().ToString().ToUpper(),
-                            name = _Details.reporter.name,
-                            mac = _Details.reporter.mac,
-                            ipv4 = _Details.reporter.ipv4,
-                            hwType = _Details.reporter.hwType,
-                            swVersion = _Details.reporter.swVersion,
-                            swBuild = _Details.reporter.swBuild
-                        };
-                        _reporterTable.Save();
+                    //if (deviceuygunlugu)
+                    //{
+                    #region Reporter
+                    //reporter _reporterTable = new reporter(session)
+                    //{
+                    //    id = Guid.NewGuid().ToString().ToUpper(),
+                    //    name = _Details.reporter.name,
+                    //    mac = _Details.reporter.mac,
+                    //    ipv4 = _Details.reporter.ipv4,
+                    //    hwType = _Details.reporter.hwType,
+                    //    swVersion = _Details.reporter.swVersion,
+                    //    swBuild = _Details.reporter.swBuild
+                    //};
+                    //_reporterTable.Save();
 
-                        #endregion
+                    #endregion
 
-                        new anatablo(session)
-                        {
-                            id = Guid.NewGuid().ToString().ToUpper(),
-                            meta = _Details.meta.version,
-                            reporterid = _reporterTable.id
+                    //new anatablo(session)
+                    //{
+                    //    id = Guid.NewGuid().ToString().ToUpper(),
+                    //    meta = _Details.meta.version,
+                    //    reporterid = _reporterTable.id
 
-                        }.Save();
+                    //}.Save();
 
-                        deviceuygunlugu = false;
-                    }
-                    else
-                    {
-                        deviceuygunlugu = false;
-                    }
+                    //deviceuygunlugu = false;
+                    //}
+                    //else
+                    //{
+                    //    deviceuygunlugu = false;
+                    //}
 
 
 
@@ -170,6 +174,9 @@ namespace Etlik.RFID.Arayuz.Manager
                 //reporter abc = new reporter();
                 //abc.mac = "1";
                 //return abc;
+
+
+
             }
             catch (Exception ex)
             {

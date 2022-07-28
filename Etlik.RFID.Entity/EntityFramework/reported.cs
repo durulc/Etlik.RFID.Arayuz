@@ -23,13 +23,13 @@ namespace Etlik.RFID.Entity.EntityFramework
             set { SetPropertyValue<string>("model", ref _model, value); }
         }
 
-        string _vendorName = "";
-        [Persistent("vendorName")]
+        string _vendorname = "";
+        [Persistent("vendorname")]
         [Size(500)]
-        public string vendorName
+        public string vendorname
         {
-            get { return _vendorName; }
-            set { SetPropertyValue<string>("vendorName", ref _vendorName, value); }
+            get { return _vendorname; }
+            set { SetPropertyValue<string>("vendorname", ref _vendorname, value); }
         }
 
         string _mac = "";
@@ -79,7 +79,7 @@ namespace Etlik.RFID.Entity.EntityFramework
         }
 
         string _beaconevent_event = "";
-        [Persistent("beaconEvent_event")]
+        [Persistent("beaconevent_event")]
         [Size(500)]
         public string beaconevent_event
         {
