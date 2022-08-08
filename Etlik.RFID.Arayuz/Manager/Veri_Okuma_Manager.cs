@@ -51,8 +51,8 @@ namespace Etlik.RFID.Arayuz.Manager
                     
                     for (int i = 0; i < _Details.reported.Count; i++)
                     {
-                        if (_Details.reported[i].mac.ToUpper().StartsWith("7C:69"))
-                        {
+                        //if (_Details.reported[i].mac.ToUpper().StartsWith("7C:69"))
+                        //{
                             new okumaverisi(session)
                             {
                                 id = Guid.NewGuid().ToString().ToUpper(),
@@ -60,7 +60,7 @@ namespace Etlik.RFID.Arayuz.Manager
                                 mac = _Details.reported[i].mac,
                                 vendorName = _Details.reported[i].vendorName
                             }.Save();
-                        }
+                        //}
 
 
                     }
@@ -72,8 +72,8 @@ namespace Etlik.RFID.Arayuz.Manager
                     for (int i = 0; i < _Details.reported.Count; i++)
                     {
 
-                        if (_Details.reported[i].mac.ToUpper().StartsWith("7C:69"))
-                        {
+                        //if (_Details.reported[i].mac.ToUpper().StartsWith("7C:69"))
+                        //{
                             //    //deviceuygunlugu = true;
                             reported _reportedTable = new reported(session)
                             {
@@ -131,7 +131,7 @@ namespace Etlik.RFID.Arayuz.Manager
                             //string fullPath = System.IO.Path.Combine(directory, fileName);
 
                             //System.IO.File.WriteAllText(fullPath, v_gelen.ToString());
-                        }
+                        //}
                     }
 
                     //if (deviceuygunlugu)
@@ -187,7 +187,7 @@ namespace Etlik.RFID.Arayuz.Manager
                 string fullPath = System.IO.Path.Combine(directory, fileName);
 
 
-                System.IO.File.WriteAllText(fullPath, ex.ToString());
+                //System.IO.File.WriteAllText(fullPath, ex.ToString());
             }
         }
 
