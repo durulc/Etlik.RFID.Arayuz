@@ -77,9 +77,9 @@ namespace Etlik.RFID.Arayuz.Manager
                             //    //deviceuygunlugu = true;
                             reported _reportedTable = new reported(session)
                             {
-
+                                databasekayitzamani=DateTime.Now,
+                                aktif=1,                                
                                 id = Guid.NewGuid().ToString().ToUpper(),
-
                                 model = _Details.reported[i].model,
                                 vendorname = _Details.reported[i].vendorName,
                                 mac = _Details.reported[i].mac,
