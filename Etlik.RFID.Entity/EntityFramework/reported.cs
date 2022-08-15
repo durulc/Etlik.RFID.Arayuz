@@ -1,10 +1,5 @@
 ﻿using DevExpress.Xpo;
 using Etlik.RFID.Entity.Important;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Etlik.RFID.Entity.EntityFramework
 {
@@ -12,6 +7,15 @@ namespace Etlik.RFID.Entity.EntityFramework
     public class reported : TabloObject
     {
         public reported(Session session) : base(session) { }
+
+        string _reporterid = "";
+        [Persistent("reporterid")]
+        [Size(500)]
+        public string reporterid
+        {
+            get { return _reporterid; }
+            set { SetPropertyValue<string>("reporterid", ref _reporterid, value); }
+        }
 
 
         string _model = "";
@@ -23,13 +27,13 @@ namespace Etlik.RFID.Entity.EntityFramework
             set { SetPropertyValue<string>("model", ref _model, value); }
         }
 
-        string _vendorname = "";
-        [Persistent("vendorname")]
+        string _localname = "";
+        [Persistent("localname")]
         [Size(500)]
-        public string vendorname
+        public string localname
         {
-            get { return _vendorname; }
-            set { SetPropertyValue<string>("vendorname", ref _vendorname, value); }
+            get { return _localname; }
+            set { SetPropertyValue<string>("localname", ref _localname, value); }
         }
 
         string _mac = "";
@@ -40,15 +44,6 @@ namespace Etlik.RFID.Entity.EntityFramework
             get { return _mac; }
             set { SetPropertyValue<string>("mac", ref _mac, value); }
         }
-
-        //string _statsid = "";
-        //[Persistent("statsid")]
-        //[Size(500)]
-        //public string statsid
-        //{
-        //    get { return _statsid; }
-        //    set { SetPropertyValue<string>("statsid", ref _statsid, value); }
-        //}
 
         int _stats_frame_cnt = -1;
         [Persistent("stats_frame_cnt")]
@@ -76,15 +71,6 @@ namespace Etlik.RFID.Entity.EntityFramework
         {
             get { return _rssi_smooth; }
             set { SetPropertyValue<int>("rssi_smooth", ref _rssi_smooth, value); }
-        }
-
-        string _beaconevent_event = "";
-        [Persistent("beaconevent_event")]
-        [Size(500)]
-        public string beaconevent_event
-        {
-            get { return _beaconevent_event; }
-            set { SetPropertyValue<string>("beaconevent_event", ref _beaconevent_event, value); }
         }
 
         string _firmware_banka = "";
@@ -132,10 +118,9 @@ namespace Etlik.RFID.Entity.EntityFramework
             set { SetPropertyValue<int>("lastSeen", ref _lastSeen, value); }
         }
 
-
         //public List<string> deviceClass { get; set; }
 
         //public List<beacons> beacons { get; set; }       
-        
+
     }
 }

@@ -31,16 +31,14 @@ namespace Etlik.RFID.Arayuz.cIslem
     {
         public List<string> deviceClass { get; set; }
         public string model { get; set; }
-        public string vendorName { get; set; }
+        public string localName { get; set; }
         public string mac { get; set; }
         public v_stats stats { get; set; }
         public List<v_beacons> beacons { get; set; }
         public v_rssi rssi { get; set; }
+
         public v_BeaconEvent BeaconEvent { get; set; }
-        public int txpower { get; set; }
         public int lastSeen { get; set; }
-        public v_firmware firmware { get; set; }
-        public v_sensors sensors { get; set; }
 
 
     }
@@ -60,7 +58,7 @@ namespace Etlik.RFID.Arayuz.cIslem
     public class v_stats
     {
         public int frame_cnt { get; set; }
-        public int uptime { get; set; }
+       // public int uptime { get; set; }
     }
 
     public class v_rssi

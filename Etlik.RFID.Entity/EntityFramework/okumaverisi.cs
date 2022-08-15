@@ -31,13 +31,13 @@ namespace Etlik.RFID.Entity.EntityFramework
             set { SetPropertyValue<string>("readermac", ref _readermac, value); }
         }
 
-        string _vendorName = "";
-        [Persistent("vendorName")]
+        string _localname = "";
+        [Persistent("localname")]
         [Size(250)]
-        public string vendorName
+        public string localname
         {
-            get { return _vendorName; }
-            set { SetPropertyValue<string>("vendorName", ref _vendorName, value); }
+            get { return _localname; }
+            set { SetPropertyValue<string>("localname", ref _localname, value); }
         }
 
 
