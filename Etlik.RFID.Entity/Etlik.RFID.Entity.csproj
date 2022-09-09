@@ -58,6 +58,7 @@
     <Compile Include="EntityFramework\okumaverisi.cs" />
     <Compile Include="EntityFramework\reported.cs" />
     <Compile Include="EntityFramework\reporter.cs" />
+    <Compile Include="EntityFramework\tblpersoneltag.cs" />
     <Compile Include="Important\Singleton.cs" />
     <Compile Include="Important\TabloObject.cs" />
     <Compile Include="Important\XpoManager.cs" />

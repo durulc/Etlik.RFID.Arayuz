@@ -1,10 +1,5 @@
 ﻿using DevExpress.Xpo;
 using Etlik.RFID.Entity.Important;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Etlik.RFID.Entity.EntityFramework
 {
